@@ -1,4 +1,4 @@
-package com.wynstaz.demo01.web;
+package com.wynstaz.mail.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

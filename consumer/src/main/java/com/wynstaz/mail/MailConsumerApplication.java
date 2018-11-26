@@ -1,12 +1,12 @@
-package com.wynstaz.demo01;
+package com.wynstaz.mail;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
-public class Demo01Application {
+@SpringBootApplication()
+public class MailConsumerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Demo01Application.class, args);
+        SpringApplication.run(MailConsumerApplication.class, args);
     }
 }

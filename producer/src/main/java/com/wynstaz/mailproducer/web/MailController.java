@@ -1,23 +1,21 @@
-package com.wynstaz.demo01.web;
+package com.wynstaz.mailproducer.web;
 
-import com.wynstaz.demo01.exception.ServiceException;
-import com.wynstaz.demo01.service.MailService;
+import com.wynstaz.mail.core.exception.ServiceException;
+import com.wynstaz.mail.core.service.MailService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.annotation.Resource;
-
 @Controller
 public class MailController {
 
-    @Resource
+//    @Resource
     private MailService mailService;
 
     @RequestMapping(value = "/mail/addPage", method = RequestMethod.GET)
     public String mailPage() {
-        return "addMailPage";
+        return "/addMailPage";
     }
 
     @RequestMapping(value = "/mail/add")

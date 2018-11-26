@@ -1,6 +1,6 @@
-package com.wynstaz.demo01.service;
+package com.wynstaz.mail.core.service;
 
-import com.wynstaz.demo01.exception.ServiceException;
+import com.wynstaz.mail.core.exception.ServiceException;
 
 public interface MailService {
 

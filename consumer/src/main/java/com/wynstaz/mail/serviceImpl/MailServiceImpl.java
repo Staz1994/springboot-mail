@@ -1,23 +1,22 @@
-package com.wynstaz.demo01.service.impl;
+package com.wynstaz.mail.serviceImpl;
 
-import com.wynstaz.demo01.exception.ServiceException;
-import com.wynstaz.demo01.service.MailService;
+import com.wynstaz.mail.core.exception.ServiceException;
+import com.wynstaz.mail.core.service.MailService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMailMessage;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
-@Service
+@Service("mailService")
 public class MailServiceImpl implements MailService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MailServiceImpl.class);
 
     @Resource
-    private JavaMailSender javaMailSender;
+    private JavaMailSender mailSender;
 
     @Override
     public void send(String deliver, String[] receiver, String[] carbonCopy, String subject, String content) throws ServiceException {
@@ -33,11 +32,10 @@ public class MailServiceImpl implements MailService {
             message.setCc(carbonCopy);
             message.setSubject(subject);
             message.setText(content);
-            javaMailSender.send(message);
+            mailSender.send(message);
         }catch (Exception e){
             LOGGER.error("发送邮件失败",e);
             throw new ServiceException(e.getMessage());
         }
-
     }
 }
