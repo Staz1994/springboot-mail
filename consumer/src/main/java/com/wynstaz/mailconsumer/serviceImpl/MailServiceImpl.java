@@ -1,4 +1,4 @@
-package com.wynstaz.mail.serviceImpl;
+package com.wynstaz.mailconsumer.serviceImpl;
 
 import com.wynstaz.mail.core.exception.ServiceException;
 import com.wynstaz.mail.core.service.MailService;
@@ -24,7 +24,7 @@ public class MailServiceImpl implements MailService {
         receiver = new String[]{"wynstaz@gmail.com"};
         carbonCopy = new String[]{};
         subject = "TEST MAIL SEND";
-        content = "this is a test mail, please ignore it.";
+        content = "this is a test mailconsumer, please ignore it.";
         try {
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom(deliver);

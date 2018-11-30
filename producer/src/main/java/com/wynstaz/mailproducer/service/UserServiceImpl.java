@@ -4,6 +4,7 @@ import com.wynstaz.mail.core.entity.domain.User;
 import com.wynstaz.mail.core.mapper.UserMapper;
 import com.wynstaz.mail.core.service.UserService;
 import com.wynstaz.mail.core.entity.viewobject.Result;
+import com.wynstaz.mailproducer.rabbitmq.Sender;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -19,11 +20,14 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private UserMapper userMapper;
+    @Resource
+    private Sender sender;
 
     @Override
     public Result add(User user) {
         int result = userMapper.insert(user);
         if (result == 1){
+            sender.send();
             return Result.success();
         } else {
             return Result.failure();

@@ -1,4 +1,4 @@
-package com.wynstaz.mail;
+package com.wynstaz.mailconsumer;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
